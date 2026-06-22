@@ -23,21 +23,18 @@ public class SecurityConfig {
 
 //        2.  원하는 설정으로 바꿔 볼까요?
         http.authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/","/loginForm","/test/*").permitAll() //인증없이 접근 가능한 페이지 설정
+                        .requestMatchers("/","/loginform","/test/*").permitAll() //인증없이 접근 가능한 페이지 설정
                         .anyRequest().authenticated() //나머지 페이지는 모두 인증을 요구하겠다.
                 )
                 .formLogin(formLogin -> formLogin
                         .loginProcessingUrl("/login_proc")  //기본값은 /login
-                        .loginPage("/loginForm") //해당 url을 여러분이 구현해놔야겠죠?
+                        .loginPage("/loginform") //해당 url을 여러분이 구현해놔야겠죠?
                         .defaultSuccessUrl("/info",true)
                         .usernameParameter("email")
                         .passwordParameter("passwd")
                 );
 
-
-
-
-        //.csrf(csrf -> csrf.disable());
+//                .csrf(csrf -> csrf.disable());
 
 
         return http.build();
