@@ -3,9 +3,9 @@ spring:
     name: securityexam
 
   datasource:
-    url: jdbc:mysql://localhost:3306/jpadb
-    username: mutsa
-    password: mutsapw
+    url: jdbc:mysql://localhost:3306/caramidb
+    username: carami
+    password: carami1234
 
   jpa:
     hibernate:
@@ -15,10 +15,17 @@ spring:
       hibernate:
         format_sql: true
 
-  security:
-    user:
-      name: carami
-      password: 1234
+
+jwt:
+  secretKey: aPQbsKV7CZZDls/cnhW1EjqlGux45LAbBYpBhyk7nAk=
+  refreshKey: 123456789010123456789023u454954958495w43434
+  access-expiration-ms: 1800000
+  refresh-expiration-ms: 604800000
+
+#  security:
+#    user:
+#      name: carami
+#      password: 1234
 
 
 
